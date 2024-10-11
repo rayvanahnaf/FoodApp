@@ -16,7 +16,7 @@ class Tabbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      color: Colors.black,
+      color: 'A5B68D'.toColor(),
       child: Row(
         children: titles
             .map(

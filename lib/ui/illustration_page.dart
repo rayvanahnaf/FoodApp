@@ -25,7 +25,7 @@ class IllustrationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: darkColor,
+      backgroundColor: 'A5B68D'.toColor(),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,

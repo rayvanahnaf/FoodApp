@@ -60,8 +60,7 @@ class TransactionService {
           'total': transaction.total,
           'status': 'PENDING',
         }));
-
-    print(response.body);
+    print(User.token);
 
     if (response.statusCode != 200) {
       return ApiReturnValue(message: 'Failed To Submit Transaction');

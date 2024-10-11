@@ -22,7 +22,7 @@ class GeneralPages extends StatelessWidget {
       body: Stack(
         children: <Widget>[
           Container(
-            color: darkColor,
+            color: 'A5B68D'.toColor(),
           ),
           SafeArea(
             child: Container(

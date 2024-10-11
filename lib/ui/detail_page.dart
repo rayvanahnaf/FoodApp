@@ -27,7 +27,7 @@ class _DetailPageState extends State<DetailPage> {
           ),
           SafeArea(
             child: Container(
-              color: darkColor,
+              color: 'A5B68D'.toColor(),
             ),
           ),
           SafeArea(

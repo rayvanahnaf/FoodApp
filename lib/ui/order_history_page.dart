@@ -40,7 +40,7 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                       horizontal: defaultMargin,
                       vertical: 15,
                     ),
-                    color: Colors.black,
+                    color: 'A5B68D'.toColor(),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -57,7 +57,7 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                   ),
                   Container(
                     width: double.infinity,
-                    color: Colors.black,
+                    color: 'A5B68D'.toColor(),
                     child: Column(
                       children: [
                         Tabbar(
@@ -101,6 +101,9 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                                   .toList(),
                             );
                           },
+                        ),
+                        SizedBox(
+                          height: 80,
                         ),
                       ],
                     ),

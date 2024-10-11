@@ -62,7 +62,7 @@ class _AddressPageState extends State<AddressPage> {
               horizontal: 10,
             ),
             decoration: BoxDecoration(
-              color: darkColor,
+              color: 'A5B68D'.toColor(),
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
                 color: whiteColor,
@@ -99,7 +99,7 @@ class _AddressPageState extends State<AddressPage> {
               horizontal: 10,
             ),
             decoration: BoxDecoration(
-              color: darkColor,
+              color: 'A5B68D'.toColor(),
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
                 color: whiteColor,
@@ -136,7 +136,7 @@ class _AddressPageState extends State<AddressPage> {
               horizontal: 10,
             ),
             decoration: BoxDecoration(
-              color: darkColor,
+              color: 'A5B68D'.toColor(),
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
                 color: whiteColor,
@@ -173,7 +173,7 @@ class _AddressPageState extends State<AddressPage> {
               horizontal: 10,
             ),
             decoration: BoxDecoration(
-              color: darkColor,
+              color: 'A5B68D'.toColor(),
               borderRadius: BorderRadius.circular(10),
               border: Border.all(
                 color: whiteColor,
@@ -199,7 +199,7 @@ class _AddressPageState extends State<AddressPage> {
               },
               isExpanded: true,
               underline: const SizedBox(),
-              dropdownColor: darkColor,
+              dropdownColor: 'A5B68D'.toColor(),
               style: heading3,
             ),
           ),

@@ -16,7 +16,7 @@ class BottomNavbar extends StatelessWidget {
       width: double.infinity,
       height: 70,
       decoration: BoxDecoration(
-        color: darkColor,
+        color: Colors.white,
         boxShadow: [
           BoxShadow(
             color: Colors.white.withOpacity(0.2),

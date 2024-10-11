@@ -76,7 +76,8 @@ class UserService {
       ApiReturnValue<String> result = await uploadPicturePath(pictureFile);
 
       if (result.value != null) {
-        value = value.copyWith(picturePath: "https://food.rtid73.com/storage/${result.value}");
+        value = value.copyWith(
+            picturePath: "https://food.rtid73.com/storage/${result.value}");
       }
     }
 
@@ -112,5 +113,23 @@ class UserService {
     } else {
       return ApiReturnValue(message: "Failed To Upload Picture");
     }
+  }
+
+  static Future<ApiReturnValue<bool>> logout({http.Client? client}) async {
+    client ??= http.Client();
+
+    String url = '$baseUrl/logout';
+    print("URL Logout : $url");
+
+    var uri = Uri.parse(url);
+    var response = await http.post(uri, headers: ApiServices.headersPost(token: User.token));
+
+    print("Reponse Logout : ${response.body}");
+
+    if(response.statusCode != 200) {
+      return ApiReturnValue(message: 'Logout Failed');
+    }
+
+    return ApiReturnValue(value: true);
   }
 }

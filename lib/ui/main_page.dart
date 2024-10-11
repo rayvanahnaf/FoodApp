@@ -30,7 +30,7 @@ class _MainPageState extends State<MainPage> {
             color: darkColor,
           ),
           Container(
-            color: '191919'.toColor(),
+            color: 'A5B68D'.toColor(),
           ),
           SafeArea(
             child: PageView(

@@ -15,7 +15,7 @@ class FoodCard extends StatelessWidget {
       width: 200,
       height: 200,
       decoration: BoxDecoration(
-        color: darkColor,
+        color: 'ECDFCC'.toColor(),
         boxShadow: [
           BoxShadow(
             color: Colors.white.withOpacity(0.2),

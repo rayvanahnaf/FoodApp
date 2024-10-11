@@ -18,7 +18,7 @@ class _ProfilePageState extends State<ProfilePage> {
           padding: const EdgeInsets.symmetric(vertical: defaultMargin),
           margin: const EdgeInsets.only(bottom: defaultMargin),
           width: double.infinity,
-          color: Colors.black,
+          color: 'A5B68D'.toColor(),
           child: Column(
             children: [
               Container(
@@ -60,7 +60,7 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
         ),
         Container(
-          color: Colors.black,
+          color: 'A5B68D'.toColor(),
           height: MediaQuery.of(context).size.height - 320,
           padding: const EdgeInsets.all(defaultMargin),
           child: Column(
@@ -91,13 +91,19 @@ class AccountTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         RowTab(title: 'Edit Profile'),
         RowTab(title: 'Home Address'),
         RowTab(title: 'Security'),
         RowTab(title: 'Payments'),
-        RowTab(title: 'Sign Out'),
+        InkWell(
+            onTap: () {
+              context.read<UserCubit>().signOut();
+              print(User.token);
+              Get.to(const SignInPage());
+            },
+            child: RowTab(title: 'Signout')),
       ],
     );
   }
