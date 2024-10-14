@@ -122,6 +122,27 @@ class _SignInPageState extends State<SignInPage> {
                       ? loadingIndicator
                       : ElevatedButton(
                           onPressed: () async {
+                            if (emailController.text == "" ||
+                                passwordController.text == "") {
+                              Get.snackbar(
+                                "",
+                                "",
+                                backgroundColor: "D9435E".toColor(),
+                                icon: Icon(
+                                  MdiIcons.closeCircleOutline,
+                                  color: whiteColor,
+                                ),
+                                titleText: Text(
+                                  "Email or Password is Wrong",
+                                  style: heading1,
+                                ),
+                                messageText: Text(
+                                  "Please again your Email and Password",
+                                  style: heading3,
+                                ),
+                              );
+                            }
+
                             setState(() {
                               isLoading = true;
                             });

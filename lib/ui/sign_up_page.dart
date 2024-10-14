@@ -196,13 +196,53 @@ class _SignUpPageState extends State<SignUpPage> {
                   padding: const EdgeInsets.only(right: defaultMargin),
                   child: ElevatedButton(
                     onPressed: () {
-                      Get.to(() => AddressPage(
-                            user: User(
-                                name: nameController.text,
-                                email: emailController.text),
-                            password: passwordController.text,
-                            pictureFile: pictureFile!,
-                          ));
+                      if (nameController.text == "" ||
+                          emailController.text == "" ||
+                          passwordController.text == "") {
+                        Get.snackbar(
+                          "",
+                          "",
+                          backgroundColor: "D9435E".toColor(),
+                          icon: Icon(
+                            MdiIcons.closeCircleOutline,
+                            color: whiteColor,
+                          ),
+                          titleText: Text(
+                            "Email or Password is Wrong",
+                            style: heading1,
+                          ),
+                          messageText: Text(
+                            "Please again your Email and Password",
+                            style: heading3,
+                          ),
+                        );
+                      } else if (pictureFile == null) {
+                        Get.snackbar(
+                          "",
+                          "",
+                          backgroundColor: "D9435E".toColor(),
+                          icon: Icon(
+                            MdiIcons.closeCircleOutline,
+                            color: whiteColor,
+                          ),
+                          titleText: Text(
+                            "Please select your profile picture",
+                            style: heading1,
+                          ),
+                          messageText: Text(
+                            "We need your picture for identify you",
+                            style: heading3,
+                          ),
+                        );
+                      } else {
+                        Get.to(() => AddressPage(
+                              user: User(
+                                  name: nameController.text,
+                                  email: emailController.text),
+                              password: passwordController.text,
+                              pictureFile: pictureFile!,
+                            ));
+                      }
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: mainColor,

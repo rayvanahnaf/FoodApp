@@ -215,7 +215,28 @@ class _AddressPageState extends State<AddressPage> {
                     ? loadingIndicator
                     : ElevatedButton(
                         onPressed: () async {
-                          User user = widget.user.copyWith(
+
+                          if (addressController.text == "" ||
+                              houseNumberController.text == "" ||
+                              phoneNumberController.text == "") {
+                            Get.snackbar(
+                              "",
+                              "",
+                              backgroundColor: "D9435E".toColor(),
+                              icon: Icon(
+                                MdiIcons.closeCircleOutline,
+                                color: whiteColor,
+                              ),
+                              titleText: Text(
+                                "Please fill all the fields",
+                                style: heading1,
+                              ),
+                              messageText: Text(
+                                "We don't want to miss you",
+                                style: heading3,
+                              ),
+                            );
+                          } User user = widget.user.copyWith(
                             address: addressController.text,
                             phoneNumber: phoneNumberController.text,
                             houseNumber: houseNumberController.text,
@@ -231,10 +252,10 @@ class _AddressPageState extends State<AddressPage> {
 
                           // memanggil fungsi signup
                           await context.read<UserCubit>().signUp(
-                                user,
-                                widget.password,
-                                pictureFile: widget.pictureFile,
-                              );
+                            user,
+                            widget.password,
+                            pictureFile: widget.pictureFile,
+                          );
 
                           // mendapatkan state setelah signup
                           UserState state = context.read<UserCubit>().state;
